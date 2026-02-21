@@ -62,18 +62,40 @@ Frontend:
 ## 🗂 Project Structure
 
 WEBAPP/
+│
 ├── backend/
 │   ├── src/
 │   │   ├── config/
+│   │   │   └── db.js
 │   │   ├── controllers/
+│   │   │   ├── authController.js
+│   │   │   └── taskController.js
 │   │   ├── middleware/
+│   │   │   └── authMiddleware.js
 │   │   ├── routes/
+│   │   │   ├── authRoutes.js
+│   │   │   └── taskRoutes.js
 │   │   ├── app.js
 │   │   └── server.js
+│   ├── package.json
 │   └── Dockerfile
 │
 ├── frontend/
 │   ├── src/
+│   │   ├── api/
+│   │   │   └── api.js
+│   │   ├── components/
+│   │   │   ├── Navbar.vue
+│   │   │   └── TaskCard.vue
+│   │   ├── views/
+│   │   │   ├── Login.vue
+│   │   │   ├── Register.vue
+│   │   │   └── Dashboard.vue
+│   │   ├── router/
+│   │   │   └── index.js
+│   │   ├── App.vue
+│   │   └── main.js
+│   ├── package.json
 │   └── Dockerfile
 │
 ├── docker-compose.yml
