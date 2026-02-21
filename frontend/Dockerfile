@@ -1,11 +1,13 @@
 # Build stage
-FROM node:18-alpine AS build
+FROM node:20-alpine AS build
 WORKDIR /app
 
 RUN apk add --no-cache bash git python3 g++ make
 
 COPY package*.json ./
-RUN npm install
+
+# Install deps (ignore peer conflicts safely in Docker)
+RUN npm install --legacy-peer-deps
 
 COPY . .
 RUN npm run build
